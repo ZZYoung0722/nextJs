@@ -97,4 +97,4 @@ JavaScript에서 Promise.all() 또는 Promise.allSettled() 함수를 사용하�
 
 Next.js 스트리밍 구현 방법
 1. 페이지 수준에서 loading.tsx 파일 사용
-2. 특정 구성 요소의 경우 <Suspense>.
+2. 특정 구성 요소의 경우 <Suspense> Suspense 태그.
