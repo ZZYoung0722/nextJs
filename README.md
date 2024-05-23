@@ -3,9 +3,8 @@
 ## 괄호() 사용하면 괄호 안에 이름이 url 경로에 포함 안됨
 
 > 실행방법
-경로는 package.json 파일이 있는 폴더에서 실행 해야함
-
-npm run dev
+> 경로는 package.json 파일이 있는 폴더에서 실행
+> npm run dev
 
 ## Tailwind
 새 프젝 시작 시 Next.js Tailwind 사용할 건지 물어봄 그때 yes 하면 자동으로 필요한 패키지 설치 및 애플리케이션에 Tailwind 구성
