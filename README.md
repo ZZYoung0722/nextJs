@@ -1,11 +1,9 @@
-# nextJs
-
 # Learn Next.js
 
 ## 괄호() 사용하면 괄호 안에 이름이 url 경로에 포함 안됨
 
-## 실행방법
-경로 C:\...\nextJs\nextjs-dashboard>
+> 실행방법
+경로는 package.json 파일이 있는 폴더에서 실행 해야함
 
 npm run dev
 
@@ -40,7 +38,7 @@ Next.js는 빌드 시 글꼴 파일을 다운로드하고 이를 다른 정적 �
 
 ## usePathname
 현재 URL의 경로 이름을 읽을 수 있는 클라이언트 구성 요소 후크 및 현재의 URL의 경로 이름 문자열을 반환
-
+```
 'use client'
  
 import { usePathname } from 'next/navigation'
@@ -49,6 +47,7 @@ export default function ExampleClientComponent() {
   const pathname = usePathname()
   return <p>Current pathname: {pathname}</p>
 }
+```
 
 ## 데이터베이스
 클라이언트에서 데이터를 가져올 때 데이터베이스에 직접 쿼리하면 데이터베이스 비밀 노출됨
@@ -110,11 +109,13 @@ Next.js 스트리밍 구현 방법
 
 로딩 뼈대 추가
 -> loading.tsx 포함하는 모든 UI는 정적 파일의 일부로 포함되어 먼저 전송 그런 다음 나머지 동적 콘텐츠가 서버에서 클라이언트로 스트리밍
+```
 import DashboardSkeleton from '@/app/ui/skeletons';
  
 export default function Loading() {
   return <DashboardSkeleton />;
 }
+```
 
 ### 구성요소 스트리밍
 Suspense를 사용하면 일부 조건이 충족될 때까지(예: 데이터 로드) 애플리케이션의 렌더링 부분을 연기 가능
@@ -131,3 +132,6 @@ Suspense에서 동적 구성요소를 래핑할 수 있습니다. 그런 다음 
 그러나 애플리케이션에 필요한 경우 섹션이나 전체 페이지를 스트리밍하는 데 아무런 문제가 없습니다.
 
 - 가져오는 데이터를 필요한 구성 요소로 이동하면 보다 세부적인 Suspense 경계를 만들 수 있습니다. 이를 통해 특정 구성 요소를 스트리밍하고 UI가 차단되는 것을 방지
+
+## 부분 사전 렌더링
+구성
