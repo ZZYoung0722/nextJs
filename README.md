@@ -3,7 +3,9 @@
 ## 괄호() 사용하면 괄호 안에 이름이 url 경로에 포함 안됨
 
 > 실행방법
+> 
 > 경로는 package.json 파일이 있는 폴더에서 실행
+> 
 > npm run dev
 
 ## Tailwind
