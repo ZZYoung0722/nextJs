@@ -9,6 +9,8 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { Button } from '@/app/ui/button';
+import { updateInvoice } from '@/app/lib/actions';
+
 
 export default function EditInvoiceForm({
   invoice,
@@ -17,8 +19,12 @@ export default function EditInvoiceForm({
   invoice: InvoiceForm;
   customers: CustomerField[];
 }) {
+  const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
   return (
-    <form>
+      // id를 인수로 전달하면 작동하지 않습니다
+      // <form action={updateInvoice(id)}>
+      // 대신 JS bind를 사용하여 서버 작업에 id를 전달 가능. 이렇게 하면 서버 작업에 전달된 모든 값이 인코딩됩니다.
+      <form action={updateInvoiceWithId}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">
