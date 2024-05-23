@@ -5,6 +5,8 @@
 ## 괄호() 사용하면 괄호 안에 이름이 url 경로에 포함 안됨
 
 ## 실행방법
+경로 C:\Users\nCloud\IdeaProjects\nextJs\nextjs-dashboard>
+
 npm run dev
 
 ## Tailwind
