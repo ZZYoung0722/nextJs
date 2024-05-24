@@ -7,6 +7,10 @@
 > 경로는 package.json 파일이 있는 폴더에서 실행
 > 
 > npm run dev
+>
+> 이메일: user@nextmail.com
+> 비밀번호: 123456
+
 
 ## Tailwind
 새 프젝 시작 시 Next.js Tailwind 사용할 건지 물어봄 그때 yes 하면 자동으로 필요한 패키지 설치 및 애플리케이션에 Tailwind 구성
@@ -224,3 +228,57 @@ Suspense에서 동적 구성요소를 래핑할 수 있습니다. 그런 다음 
   - 데이터를 데이터베이스로 보내기 전에 데이터가 예상된 형식인지 확인
   - 악의적인 사용자가 클라이언트 측 유효성 검사를 우회하는 위험 감소
   - 유효한 데이터로 간주되는 정보에 대한 하나의 진실 소스를 확보
+
+ ## NextAuth.js
+  - 애플리케이션에 인증을 추가하려면 NextAuth.js는 세션 관리, 로그인 및 로그아웃, 기타 인증 측면과 관련된 많은 복잡성을 추상화 함
+  - 이러한 기능을 수동으로 구현할 수도 있지만 이 프로세스는 시간이 많이 걸리고 오류가 발생하기 쉽다
+  - NextAuth.js는 Next.js 애플리케이션의 인증을 위한 통합 솔루션을 제공하여 프로세스 단순화
+
+ ## 메타데이터
+  - 메타데이터란?
+    - 웹 개발에서 메타데이터는 웹페이지에 대한 추가 세부정보를 제공
+    - 페이지를 방문하는 사용자에게는 메타데이터가 표시되지 않는다.
+    - 대신 페이지의 HTML, 일반적으로 ``` <head> ``` 요소 내에 삽입되어 뒤에서 작동
+    - 숨겨진 정보는 웹페이지의 콘텐츠를 더 잘 이해해야하는 검색 엔진 및 기타 시스템에 매우 중요
+
+  - 메타데이터 중요성
+    - 웹 페이지의 SEO를 향상시키는데 중요한 역할을 하여 검색 엔진과 소셜 미디어 플랫폼에서 웹페이지에 대한 접근성과 이해도를 높인다.
+      - SEO  Search Engine Optimization  검색 엔진 최적화
+    - 적절한 메타테이터는 검색 엔진이 웹 페이지를 효과적으로 색인화하여 검색 결과에서 순위를 높이는 데 도움 된다.
+    - Open Graph와 같은 메타데이터는 소셜 미디어에서 공유 링크의 모양을 개선하여 사용자에게 콘텐츠를 더욱 매력적이고 유익하게 만든다.
+   
+  - 메타데이터 유형
+    - Title Metadata
+      - 브라우저 탭에 표시되는 웹페이지의 제목 담당
+      - 검색 엔진이 웹페이지의 내용을 이해하는 데 도움이 되므로 SEO에 매우 중요
+      - ```<title>Page Title</title>```
+    - 설명 Metadata
+      - 웹페이지 콘텐츠에 대한 간략한 개요를 제공하며 검색 엔진 결과에 자주 표시
+      - ``` <meta name="description" content="A brief description of the page content." /> ```
+    - 키워드 Metadata
+      - 웹페이지 콘텐츠와 관련된 키워드가 포함되어 있어 검색 엔진이 페이지를 색인화하는 데 도움 됨
+      - ``` <meta name="keywords" content="keyword1, keyword2, keyword3" /> ```
+    - 오픈 그래프 Metadata
+      - 제목, 설명, 미리보기 이미지 등의 정보를 제공하여 소셜 미디어 플랫폼에서 공유할 때 웹페이지가 표시된느 방식을 향상시킴
+      - ``` <meta property="og:title" content="Title Here" />
+            <meta property="og:description" content="Description Here" />
+            <meta property="og:image" content="image_url_here" /> ```
+    - 파비콘 Metadata
+      - 파비콘(작은 아이콘)을 브라우저의 주소 표시줄이나 탭에 표시되는 웹페이지에 연결
+      - ``` <link rel="icon" href="path/to/favicon.ico" /> ```
+     
+  - 메타데이터 추가
+    - 방법
+      1. 구성 기반
+         - 정적 ```metadata``` 개체 또는 동적 ```generateMetadata``` 함수를 ```layout.js``` 또는 ```page.js``` 파일로 내보냄
+      2. 파일 기반
+         - Next.js에는 메타데이터 목적으로 특별히 사용되는 다양한 특수 파일이 있다
+           - ```favicon.ico, apple-icon.jpg, 및 icon.jpg```: 파비콘 및 아이콘에 활용
+           - ```opengraph-image.jpg및 twitter-image.jpg```: 소셜 미디어 이미지를 위해 고용
+           - ```robots.txt```: 검색엔진 크롤링에 대한 지침을 제공
+           - ```sitemap.xml```: 웹사이트의 구조에 대한 정보를 제공
+    - 두 가지 옵션을 모두 사용하면 Next.js가 페이지에 대한 관련 ```<head>``` 요소를 자동으로 생성
+    - ```ImageResponse``` 생성자를 사용하여 동적 OG 이미지 만들 수 있다.
+    - 중첩된 페이지의 메타데이터는 상위 페이지의 메타데이터보다 우선 적용
+  - Next.js 메타데이터 API는 강력하고 유연하여 애플리케이션의 메타데이터를 완벽하게 제어할 수 있다.
+  - ```keywords, robots, canonical``` 등을 포함한 여러 필드를 추가 가능
