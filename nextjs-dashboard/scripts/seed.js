@@ -5,6 +5,8 @@ const {
   revenue,
   users,
 } = require('../app/lib/placeholder-data.js');
+
+// 사용자의 비밀번호를 데이터베이스에 저장하기 전에 해시하도록 bcrypt 패키지 사용
 const bcrypt = require('bcrypt');
 
 async function seedUsers(client) {
